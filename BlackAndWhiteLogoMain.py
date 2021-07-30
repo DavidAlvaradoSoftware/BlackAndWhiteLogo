@@ -1,13 +1,13 @@
 # Preview image done, now need to work on iteration if folder is selected. also need to work on output images to be
 # placed in output folder.
+import os
+from datetime import datetime
 from tkinter import *
 from tkinter import filedialog
 from tkinter.messagebox import *
-from PIL import ImageTk, Image
-from datetime import datetime
+
 import cv2
-import os
-import subprocess
+from PIL import ImageTk, Image
 
 logo_location = None
 image_location_label = None
@@ -112,8 +112,8 @@ def preview_image(img_file_name, folder=None):
 
     # Start button
     start_blending_btn = Button(image_preview_window, text="Confirm and Start Blending",
-                                command=lambda: blend_all(gray_logo, img_file_name, folder, x_coordinate.get(),
-                                                          y_coordinate.get(),
+                                command=lambda: blend_all(gray_logo, img_file_name, folder, y_coordinate.get(),
+                                                          x_coordinate.get(),
                                                           intensity_textbox.get()))
     start_blending_btn.grid(row=4, column=0, columnspan=5, sticky="nsew", padx=20, pady=(0, 20))
 
@@ -140,7 +140,7 @@ def blend_all(logo, img_file_name, folder, x, y, intensity):
             blended_img = blend(gray_img, logo, x, y, intensity)
             # save to output folder
             last_slash = img_file_name.rfind('/')
-            img_name = img_file_name[last_slash+1:]
+            img_name = img_file_name[last_slash + 1:]
             save_blended_image(blended_img, img_name)
     showinfo("Success",
              "All images have been blended with your logo. These new images will be place in the output folder.")
@@ -185,7 +185,7 @@ def preview_window_submit(image, logo, x, y, intensity):
         intensity = float(intensity)
         x = int(x)
         y = int(y)
-        blended_image = blend(image, logo, x, y, intensity)
+        blended_image = blend(image, logo, y, x, intensity)
         cv2.imshow("Blended_image", blended_image)
 
 
