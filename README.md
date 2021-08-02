@@ -172,19 +172,6 @@ the command line:
     ```
 
 
-#### API Reference
-
-```html
-    <p>dummy code</p>
-```
-[Back To The Top](#read-me-template)
-
----
-
-## References
-[Back To The Top](#read-me-template)
-
----
 
 ## License
 
@@ -216,7 +203,6 @@ SOFTWARE.
 
 ## Author Info
 
-- Twitter - [@jamesqquick](https://twitter.com/jamesqquick)
-- Website - [James Q Quick](https://jamesqquick.com)
+- LinkedIn - [David Alvarado](https://www.linkedin.com/in/david-a-alvarado/)
 
 [Back To The Top](#read-me-template)
